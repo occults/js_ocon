@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Проверка числа на наличие одинаковых цифр</title>
+</head>
+<body>
+    <script>
+        var number = 534; 
+        var isDuplicate = false; // флаг, который станет true, если найдутся одинаковые цифры
+
+        // проверяем каждую цифру по отдельности, сравнивая с двумя другими
+        if (number.toString()[0] === number.toString()[1] || number.toString()[0] === number.toString()[2]) {
+            isDuplicate = true;
+        }
+
+        if (number.toString()[1] === number.toString()[0] || number.toString()[1] === number.toString()[2]) {
+            isDuplicate = true;
+        }
+
+        if (number.toString()[2] === number.toString()[0] || number.toString()[2] === number.toString()[1]) {
+            isDuplicate = true;
+        }
+
+        if (isDuplicate) {
+            document.write('В числе ' + number + ' есть одинаковые цифры');
+        } else {
+            document.write('В числе ' + number + ' все цифры разные');
+        }
+    </script>
+</body>
+</html>

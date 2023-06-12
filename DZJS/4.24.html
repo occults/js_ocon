@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Проверка числа</title>
+</head>
+<body>
+    <script>
+        var number = 48; //задаем двузначное число
+        let square = Math.pow(number, 2); //возводим число в квадрат
+
+    let digit1 = Math.floor(number / 10); //получаем первую цифру числа
+    let digit2 = number % 10; //получаем вторую цифру числа
+
+    let sum = Math.pow(digit1, 3) + Math.pow(digit2, 3); //вычисляем суму кубов цифр
+
+    if (square === sum * 4) {
+        alert("Ответ положительный");
+    } else {
+        alert("Ответ отрицательный");
+    }
+</script>
+</body>
+</html>

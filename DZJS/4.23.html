@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Решение задачи через JS</title>
+    <meta charset="utf-8">
+</head>
+<body>
+    <h1>Определение наибольшей цифры</h1>
+    <label for="num">Введите двузначное число:</label>
+    <input type="number" id="num">
+    <button onclick="findMaxDigit()">Найти наибольшую цифру</button>
+    <hr>
+    <p id="result"></p>
+
+<script>
+    function findMaxDigit() {
+        let num = document.getElementById("num").value;
+        if (num < 10 || num > 99) {
+            alert("Введите двузначное число!");
+            return;
+        }
+        let firstDigit = Math.floor(num/10);
+        let secondDigit = num % 10;
+        let result;
+        if (firstDigit > secondDigit) {
+            result = "Наибольшей цифрой является " + firstDigit;
+        } else if (firstDigit < secondDigit) {
+            result = "Наибольшей цифрой является " + secondDigit;
+        } else {
+            result = "Цифры в числе равны";
+        }
+        document.getElementById("result").textContent = result;
+    }
+</script>
+</body>
+</html>

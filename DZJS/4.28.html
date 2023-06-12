@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Решение задачи на JavaScript</title>
+    <script>
+        function compareDigits() {
+            var number = document.getElementById('number').value;
+            var firstDigit = parseInt(number / 100);
+            var secondDigit = parseInt((number % 100) / 10);
+            var lastDigit = number % 10;
+            var result = '';
+            if (firstDigit > lastDigit) {
+                result += 'Первая цифра больше последней. ';
+            } else if (firstDigit < lastDigit) {
+                result += 'Последняя цифра больше первой. ';
+            } else {
+                result += 'Первая и последняя цифры равны. ';
+            }
+            if (firstDigit > secondDigit) {
+                result += 'Первая цифра больше второй. ';
+            } else if (firstDigit < secondDigit) {
+                result += 'Вторая цифра больше первой. ';
+            } else {
+                result += 'Первая и вторая цифры равны. ';
+            }
+            if (secondDigit > lastDigit) {
+                result += 'Вторая цифра больше последней. ';
+            } else if (secondDigit < lastDigit) {
+                result += 'Последняя цифра больше второй. ';
+            } else {
+                result += 'Вторая и последняя цифры равны. ';
+            }
+            document.getElementById('result').innerHTML = result;
+        }
+    </script>
+</head>
+<body>
+    <p>Введите трехзначное число:</p>
+    <input type="text" id="number">
+    <button onclick="compareDigits()">Проверить</button>
+    <p id="result"></p>
+</body>
+</html>

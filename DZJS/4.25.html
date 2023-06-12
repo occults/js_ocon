@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Определение свойств числа</title>
+</head>
+<body>
+    <h2>Введите двузначное число:</h2>
+    <input type="number" id="num">
+    <br><br>
+    <button onclick="check()">Проверить</button>
+    <div id="result"></div>
+
+<script>
+    function check() {
+        var num = document.getElementById("num").value;
+        var sum = parseInt(num[0]) + parseInt(num[1]); // вычисляем сумму цифр числа
+        var result = document.getElementById("result");
+
+        // проверяем, является ли сумма цифр двузначным числом
+        if (sum > 9 && sum < 100) {
+            result.innerHTML = "Сумма цифр является двузначным числом.<br>";
+        } else {
+            result.innerHTML = "Сумма цифр не является двузначным числом.<br>";
+        }
+
+        // проверяем, больше ли число а суммы его цифр
+        if (num > sum) {
+            result.innerHTML += "Число больше суммы его цифр.";
+        } else {
+            result.innerHTML += "Сумма цифр больше числа.";
+        }
+    }
+</script>
+
+</body>
+</html>

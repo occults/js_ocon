@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Проверка на палиндром</title>
+</head>
+<body>
+    <label for="number">Введите трехзначное число:</label>
+    <input type="text" name="number" id="number">
+    <button onclick="checkPalindrome()">Проверить на палиндром</button>
+    <p id="result"></p>
+
+<script>
+    function checkPalindrome() {
+        let number = document.getElementById('number').value;
+        if (number.length != 3) {
+            alert('Введите трехзначное число');
+            return;
+        }
+        let reversedNumber = number.split('').reverse().join('');
+        if (number == reversedNumber) {
+            document.getElementById('result').innerText = 'Число является палиндромом';
+        } else {
+            document.getElementById('result').innerText = 'Число не является палиндромом';
+        }
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Максимальное количество прямоугольников на столе</title>
+  </head>
+  <body>
+    <h1>Максимальное количество прямоугольников на столе</h1>
+    <p>Введите размеры стола и прямоугольников:</p>
+    <label for="a">a:</label>
+    <input id="a" type="number">
+    <br>
+    <label for="b">b:</label>
+    <input id="b" type="number">
+    <br>
+    <label for="c">c:</label>
+    <input id="c" type="number">
+    <br>
+    <label for="d">d:</label>
+    <input id="d" type="number">
+    <br>
+    <button onclick="showMaxRectangles()">Показать результат</button>
+    <p id="result"></p>
+
+    <script>
+      function showMaxRectangles() {
+        const a = document.getElementById("a").value;
+        const b = document.getElementById("b").value;
+        const c = document.getElementById("c").value;
+        const d = document.getElementById("d").value;
+        const result = document.getElementById("result");
+
+    function getMaxRectangles(a, b, c, d) {
+      // количество прямоугольников, размещаемых вдоль длинной стороны стола
+      const count1 = Math.floor(a / c) * Math.floor(b / d);
+
+      // количество прямоугольников, размещаемых вдоль короткой стороны стола
+      const count2 = Math.floor(a / d) * Math.floor(b / c);
+
+      if (count1 >= count2) {
+        return `Размещая прямоугольники вдоль длинной стороны стола, на нём можно разместить больше прямоугольников. Количество: ${count1}.`;
+      } else {
+        return `Размещая прямоугольники вдоль короткой стороны стола, на нём можно разместить больше прямоугольников. Количество: ${count2}.`;
+      }
+    }
+
+    result.innerHTML = getMaxRectangles(a, b, c, d); 
+  }
+
+</script>
+</body>
+</html>

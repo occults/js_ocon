@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Светофор для пешеходов</title>
+    <script>
+        function getSignalColor(time) {
+            let cycleTime = 3 + 2; // Зеленый свет горит 3 минуты, красный - 2 минуты
+            let passedTime = time % cycleTime; // Прошло времени с начала цикла
+            if (passedTime < 3) {
+                return "Зеленый";
+            } else {
+                return "Красный";
+            }
+        }
+
+    function showSignalColor() {
+        let currentTime = new Date();
+        let minutesPassed = currentTime.getMinutes();
+        let signalColor = getSignalColor(minutesPassed);
+        document.getElementById("signalColor").innerHTML = signalColor;
+    }
+</script>
+</head>
+<body onload="showSignalColor()">
+    <p>Сигнал для пешеходов: <span id="signalColor"></span></p>
+</body>
+</html>

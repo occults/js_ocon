@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<button onclick="checkDivisor()">Проверить делитель</button>
+
+<script>
+function checkDivisor() {
+  var a = prompt("Введите число а:");
+  var b = prompt("Введите число b:");
+  if (b%a == 0) {
+    alert(a + " является делителем " + b);
+  } else {
+    alert(a + " не является делителем " + b);
+  }
+  if (a%b == 0) {
+    alert(b + " является делителем " + a);
+  } else {
+    alert(b + " не является делителем " + a);
+  }
+}
+</script>
+
+</body>
+</html>
+

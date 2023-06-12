@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Проверка числа</title>
+  </head>
+  <body>
+    <h1>Проверка числа</h1>
+    <p>Введите четырехзначное число:</p>
+    <input type="text" id="number">
+    <button onclick="checkNumber()">Проверить</button>
+    <p id="result"></p>
+    <script>
+      function checkNumber() {
+        var number = document.getElementById("number").value;
+        if (number.length != 4) {
+          document.getElementById("result").innerHTML = "Некорректный ввод. Введите четырехзначное число.";
+          return;
+        }
+        var firstSum = parseInt(number.charAt(0)) + parseInt(number.charAt(1));
+        var lastSum = parseInt(number.charAt(2)) + parseInt(number.charAt(3));
+        if (firstSum == lastSum) {
+          document.getElementById("result").innerHTML += "Сумма двух первых цифр равна сумме двух последних цифр.<br>";
+        } else {
+          document.getElementById("result").innerHTML += "Сумма двух первых цифр НЕ равна сумме двух последних цифр.<br>";
+        }
+        var sum = parseInt(number.charAt(0)) + parseInt(number.charAt(1)) + parseInt(number.charAt(2)) + parseInt(number.charAt(3));
+        if (sum % 3 == 0) {
+          document.getElementById("result").innerHTML += "Сумма цифр кратна трем.<br>";
+        } else {
+          document.getElementById("result").innerHTML += "Сумма цифр НЕ кратна трем.<br>";
+        }
+        var product = parseInt(number.charAt(0)) * parseInt(number.charAt(1)) * parseInt(number.charAt(2)) * parseInt(number.charAt(3));
+        if (product % 4 == 0) {
+          document.getElementById("result").innerHTML += "Произведение цифр кратно четырем.<br>";
+        } else {
+          document.getElementById("result").innerHTML += "Произведение цифр НЕ кратно четырем.<br>";
+        }
+        var a = 5; // замените на нужное число
+        if (product % a == 0) {
+          document.getElementById("result").innerHTML += "Произведение цифр кратно " + a + ".<br>";
+        } else {
+          document.getElementById("result").innerHTML += "Произведение цифр НЕ кратно " + a + ".<br>";
+        }
+      }
+    </script>
+  </body>
+</html>

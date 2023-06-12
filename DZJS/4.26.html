@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Проверка на кратность</title>
+</head>
+<body>
+    <form>
+        <label>Введите двузначное число:</label>
+        <input type="text" id="number">
+        <label>Введите число а:</label>
+        <input type="text" id="a">
+        <button type="button" onclick="check()">Проверить</button>
+    </form>
+    <div id="result"></div>
+    <script>
+        function check() {
+            var number = parseInt(document.getElementById("number").value);
+            var a = parseInt(document.getElementById("a").value);
+            var sum = Math.floor(number / 10) + number % 10;
+            var divisibleBy3 = sum % 3 == 0;
+            var divisibleByA = sum % a == 0;
+            var result = "Сумма цифр числа " + number + " равна " + sum + ".<br>";
+            if (divisibleBy3) {
+                result += "Сумма цифр числа " + number + " кратна трем.<br>";
+            } else {
+                result += "Сумма цифр числа " + number + " не кратна трем.<br>";
+            }
+            if (divisibleByA) {
+                result += "Сумма цифр числа " + number + " кратна числу " + a + ".";
+            } else {
+                result += "Сумма цифр числа " + number + " не кратна числу " + a + ".";
+            }
+            document.getElementById("result").innerHTML = result;
+        }
+    </script>
+</body>
+</html>

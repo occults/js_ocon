@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Проверка числа</title>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <script>
+      let number = prompt("Введите трехзначное число:");
+      let sum = 0;
+
+  if (number >= 100 && number <= 999) {
+    // если число трехзначное
+    let digit1 = parseInt(number / 100); // первая цифра
+    let digit2 = parseInt((number / 10) % 10); // вторая цифра
+    let digit3 = number % 10; // третья цифра
+
+    sum = digit1 ** 3 + digit2 ** 3 + digit3 ** 3; // сумма кубов цифр
+
+    if (number ** 2 === sum) {
+      alert("Квадрат этого числа равен сумме кубов его цифр.");
+    } else {
+      alert("Квадрат этого числа не равен сумме кубов его цифр.");
+    }
+  } else {
+    alert("Вы ввели некорректное число.");
+  }
+</script>
+</body>
+</html>
+
